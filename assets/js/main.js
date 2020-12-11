@@ -35,7 +35,8 @@ var app = new Vue({
             window.open(csv);
         },
         split: function(){
-            if(this.text[this.text.length -1] == this.del){
+            this.splitText = [];
+            if(this.text[this.text.length -1] == this.del.includes(this.text[this.text.length -1])){
                 this.text = this.text.slice(0, -1);
             }
             
@@ -44,11 +45,15 @@ var app = new Vue({
             }.bind(this));
 
             // this.splitText = this.text.split(this.del);
+            this.splitText.forEach(function(el, i){
+                this[i] = el.trim();
+            }, this.splitText);
 
             
             this.splitText = this.splitText.filter(function(value, index){ return this.splitText.indexOf(value) == index }.bind(this));
-            this.splitText = this.splitText.filter(function(el) { return el; });
-            app.text.split('.', app.text.split('.').length - 1)
+            console.log(this.splitText);
+            // this.splitText = this.splitText.filter(function(el) { return el; });
+            // app.text.split('.', app.text.split('.').length - 1)
             this.setStep(2);
         }
     }
