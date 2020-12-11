@@ -106,7 +106,7 @@
                                 <div class="btn-group float-right pb-2" role="group" aria-label="Basic example">
                                     <div class="input-group mr-2 ">
                                         <span class="input-group-text btn-primary" id="basic-addon1">Delimiter</span>
-                                        <input type="text" :value="this.del" max="1" maxlength="1" style="width: 40px;" class="form-control" placeholder="" aria-label="Delimiter" aria-describedby="Delimiter">
+                                        <input type="text" v-model="del" max="1" maxlength="1" style="width: 40px;" class="form-control" placeholder="" aria-label="Delimiter" aria-describedby="Delimiter">
                                       </div>
                                     <button @click="setDir('ltr')" type="button" class="btn btn-primary" :class="this.dir == 'ltr' ? 'active' : ''">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +128,7 @@
                                     <div class="selections text-left">
                                         <ul class="list-group">
                                             <li v-for="split in this.splitText" class="list-group-item">
-                                              <input v-model="selectedSplits" class="form-check-input me-1" type="checkbox" :value="split" aria-label="...">
+                                              <input v-model="selectedSplits" class="form-check-input me-1" :class="dir == 'rtl' ? 'float-right':''" type="checkbox" :value="split" aria-label="...">
                                               {{ split }}
                                             </li>
                                           </ul>
@@ -140,7 +140,7 @@
                                     <div class="selections text-left">
                                         <ul class="list-group">
                                             <li v-for="selected in selectedSplits" class="list-group-item">
-                                              <input disabled class="form-check-input me-1" type="checkbox" checked :value="selected" aria-label="...">
+                                              <input disabled  class="form-check-input me-1" :class="dir == 'rtl' ? 'float-right' : ''" type="checkbox" checked :value="selected" aria-label="...">
                                                 {{ selected }}
                                             </li>
                                             <li v-if="this.selectedSplits.length < 1" class="list-group-item">
