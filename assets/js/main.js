@@ -39,6 +39,7 @@ var app = new Vue({
                 this.text = this.text.slice(0, -1);
             }
             this.splitText = this.text.split(this.del);
+            this.splitText = this.splitText.filter(function(el) { return el; });
             app.text.split('.', app.text.split('.').length - 1)
             this.setStep(2);
         }
