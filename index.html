@@ -1,0 +1,283 @@
+<!--
+
+=========================================================
+* Paragarph Splitter
+=========================================================
+
+* Product Page: https://themesberg.com/product/bootstrap/swipe-free-mobile-app-one-page-bootstrap-5-template
+* Copyright 2020 Themesberg (https://www.themesberg.com)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>Paragarph Splitter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Paragarph Splitter">
+<meta name="description" content="A simple tool for paragraph segmentation">
+<meta name="keywords" content="paragraph, segmentation, splitter" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paragarph Splitter">
+<meta property="og:description" content="A simple tool for paragraph segmentation">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Paragarph Splitter">
+<meta property="twitter:description" content="A simple tool for paragraph segmentation">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="./assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="./vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Swipe CSS -->
+<link type="text/css" href="./css/swipe.css" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+</head>
+
+<body>
+    <header class="header-global" id="home">
+    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
+        <div class="container position-relative">
+            <a class="navbar-brand mr-lg-4" href="./index.html">
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-file-word-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5.485 4.879a.5.5 0 1 0-.97.242l1.5 6a.5.5 0 0 0 .967.01L8 7.402l1.018 3.73a.5.5 0 0 0 .967-.01l1.5-6a.5.5 0 0 0-.97-.242L9.479 9.023l-.997-3.655a.5.5 0 0 0-.964 0L6.52 9.023 5.485 4.879z"/>
+                  </svg>
+                <span>Paragarph Splitter</span>
+            </a>
+            <div class="navbar-collapse collapse mr-auto" id="navbar_global">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="./index.html">
+                                <img src="./assets/img/dark.svg" alt="Logo dark">
+                            </a>
+                            Paragarph Splitter
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <main>
+        <!-- Hero -->
+        <section class="section section-header text-dark pb-md-8">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
+                        <h1 class="display-2 font-weight-bolder mb-4">
+                            Paragarph Splitter
+                        </h1>
+                        <p class="lead mb-4 mb-lg-5">A simple tool for paragraph segmentation</p>
+                        <div id="mainapp">
+                            <div v-if="this.step == 1" class="editor">
+                                
+                                <div class="btn-group float-right pb-2" role="group" aria-label="Basic example">
+                                    <div class="input-group mr-2 ">
+                                        <span class="input-group-text btn-primary" id="basic-addon1">Delimiter</span>
+                                        <input type="text" :value="this.del" max="1" maxlength="1" style="width: 40px;" class="form-control" placeholder="" aria-label="Delimiter" aria-describedby="Delimiter">
+                                      </div>
+                                    <button @click="setDir('ltr')" type="button" class="btn btn-primary" :class="this.dir == 'ltr' ? 'active' : ''">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                                        </svg>
+                                    </button>
+                                    <button @click="setDir('rtl')" type="button" class="btn btn-primary" :class="this.dir == 'rtl' ? 'active' : ''">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                                        </svg>
+                                    </button>
+                                  </div>
+                                <textarea v-model="text" :dir="this.dir" style="width: 100%; height: 200px;" width="100%" cols="30"></textarea>
+                                <button @click="split()" type="button" class="btn btn-primary mt-3">Process</button>
+                            </div>
+                            <div class="row"  v-if="this.step == 2">
+                                <div class="col-md-6">
+                                    <h3>Avaiable</h3>
+                                    <div class="selections text-left">
+                                        <ul class="list-group">
+                                            <li v-for="split in this.splitText" class="list-group-item">
+                                              <input v-model="selectedSplits" class="form-check-input me-1" type="checkbox" :value="split" aria-label="...">
+                                              {{ split }}
+                                            </li>
+                                          </ul>
+                                    </div>
+                                    <button @click="setStep(1)" type="button" class="btn btn-primary mt-3">Back</button>
+                                </div>
+                                <div class="col-md-6 mt-5">
+                                    <h3>Selected</h3>
+                                    <div class="selections text-left">
+                                        <ul class="list-group">
+                                            <li v-for="selected in selectedSplits" class="list-group-item">
+                                              <input disabled class="form-check-input me-1" type="checkbox" checked :value="selected" aria-label="...">
+                                                {{ selected }}
+                                            </li>
+                                            <li v-if="this.selectedSplits.length < 1" class="list-group-item">
+                                                Please select a sentence.
+                                            </li>
+                                          </ul>
+                                    </div>
+                                    <button @click="download()" :disabled="this.selectedSplits.length < 1" type="button" class="btn btn-primary mt-3">Download</button>
+                                    <button @click="setStep(3)" :disabled="this.selectedSplits.length < 1" type="button" class="btn btn-primary mt-3">Submit</button>
+                                </div>
+                            </div>
+                            <div class="row" v-if="this.step == 3">
+                                <div class="col-md-12 text-center">
+                                    <p>Thank you! Your selections are submitted!</p>
+                                    <hr/>
+                                    <button @click="restart()" type="button" class="btn btn-primary mt-3">Restart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-12 col-md-10 justify-content-center">
+                        <img class="d-none d-md-inline-block" src="./assets/img/illustrations/scene.svg" alt="Mobile App Mockup">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-lg" id="faq">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 text-center mb-4 mb-lg-5">
+                        <h2 class="display-3 mb-4">Facts & Questions</h2>
+                        <p class="lead">Have a question? Read through our FAQ below. If you can't find an answer, <br class="d-none d-lg-inline-block"> please email our support team. We're here to help.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10">
+                        <!--Accordion-->
+                        <div class="accordion" id="accordionExample">
+                            <div class="card border-light mb-0">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block d-flex justify-content-between text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <span class="h6 mb-0 font-weight-bold">How to use this tool?</span>
+                                            <span class="icon"><span class="fas fa-plus"></span></span>
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="mb-0">
+                                            Type a paragraph in text box, click process & select sentences.
+                                        </p>                           
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-light mb-0">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block d-flex justify-content-between text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <span class="h6 mb-0 font-weight-bold">Can i use different delimiter?</span>
+                                            <span class="icon"><span class="fas fa-plus"></span></span>
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="mb-0">
+                                            Yes you can add custom delimiter by editing the the delimiter input above text box.
+                                        </p>                           
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-light mb-0">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block d-flex justify-content-between text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <span class="h6 mb-0 font-weight-bold">Can i download selections?</span>
+                                            <span class="icon"><span class="fas fa-plus"></span></span>
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="mb-0">
+                                            You can download selections by clicking download button once you have selections.
+                                        </p>                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of Accordion-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section bg-soft" id="download">
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+            </figure>
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <span class="h5 text-muted mb-2 d-block">Web App</span>
+                        <h2 class="display-3 mb-4">Get started in seconds</h2>
+                        <p class="lead text-muted">Responsive design use it on any device.</p>
+                    </div>
+                    <div class="col-12 col-lg-5 ml-lg-auto">
+                        <img class="d-none d-lg-inline-block" src="./assets/img/illustrations/scene-3.svg" alt="Mobile App Illustration">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="">
+
+</footer>
+
+    <!-- Core -->
+<script src="./vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="./vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="./vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Swipe JS -->
+<script src="./assets/js/vue.js"></script>
+<script src="./assets/js/swipe.js"></script>
+<script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>
