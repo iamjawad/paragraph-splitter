@@ -38,7 +38,15 @@ var app = new Vue({
             if(this.text[this.text.length -1] == this.del){
                 this.text = this.text.slice(0, -1);
             }
-            this.splitText = this.text.split(this.del);
+            
+            this.del.split(' ').forEach(function(e){
+                this.splitText = this.splitText.concat(this.text.split(e));
+            }.bind(this));
+
+            // this.splitText = this.text.split(this.del);
+
+            
+            this.splitText = this.splitText.filter(function(value, index){ return this.splitText.indexOf(value) == index }.bind(this));
             this.splitText = this.splitText.filter(function(el) { return el; });
             app.text.split('.', app.text.split('.').length - 1)
             this.setStep(2);
